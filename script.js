@@ -2,6 +2,14 @@ let cart = [];
 
 function addToCart(item, price) {
   cart.push({ item, price });
+
+  // Optional: trigger immediately when item is added
+  fetch("https://unseparating-leandro-gravest.ngrok-free.dev/webhook-test/webhook-test/ffd01a1e-14ca-466c-b8cc-54eee5deb5aa", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ item, price, action: "added" })
+  });
+  
   alert(item + " added to cart!");
 }
 
@@ -23,7 +31,7 @@ document.getElementById("orderForm").addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("https://your-n8n-backend-url/webhook/order", {
+    const res = await fetch("https://unseparating-leandro-gravest.ngrok-free.dev/webhook-test/webhook-test/ffd01a1e-14ca-466c-b8cc-54eee5deb5aa", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order)
