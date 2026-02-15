@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasty Yummy Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Tasty Yummy Restaurant</h1>
+    <nav>
+      <button onclick="viewCart()">🛒 Cart</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Menu</h2>
+    <div class="menu">
+      <div class="item">
+        <h3>Chicken Curry</h3>
+        <p>Delicious spicy curry</p>
+        <button onclick="addToCart('Chicken Curry', 12000)">Add - Tsh 12,000</button>
+      </div>
+      <div class="item">
+        <h3>Veggie Pizza</h3>
+        <p>Fresh vegetables and cheese</p>
+        <button onclick="addToCart('Veggie Pizza', 15000)">Add - Tsh 15,000</button>
+      </div>
+      <div class="item">
+        <h3>Beef Burger</h3>
+        <p>Juicy beef with fries</p>
+        <button onclick="addToCart('Beef Burger', 10000)">Add - Tsh 10,000</button>
+      </div>
+    </div>
+
+    <h2>Order Options</h2>
+    <form id="orderForm">
+      <label>
+        Dine In
+        <input type="radio" name="service" value="Dine In" required>
+      </label>
+      <label>
+        Delivery
+        <input type="radio" name="service" value="Delivery" required>
+      </label>
+
+      <h3>Payment Method</h3>
+      <label><input type="radio" name="payment" value="Cash" required> Cash</label>
+      <label><input type="radio" name="payment" value="Card" required> Card</label>
+      <label><input type="radio" name="payment" value="Mobile Pay" required> Mobile Pay</label>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <p id="response"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
